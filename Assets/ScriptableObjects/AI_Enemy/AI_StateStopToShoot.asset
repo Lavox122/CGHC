@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dd9eacff9d9ae4a9fd34c5e5d95512, type: 3}
+  m_Name: AI_StateStopToShoot
+  m_EditorClassIdentifier: 
+  Actions:
+  - {fileID: 11400000, guid: e15507d01a88dca4b8fd13a5a88bfc02, type: 2}
+  - {fileID: 11400000, guid: 01f273610dca6434eb9dadf9d8f90355, type: 2}
+  Transitions:
+  - Decision: {fileID: 11400000, guid: ce46ddd564df2c1439850c5834e2d634, type: 2}
+    TrueState: {fileID: 11400000, guid: d6cf7a50de8fe6349afba74c99c5e986, type: 2}
+    FalseState: {fileID: 11400000, guid: 8aad7c5e17a8c6d4e9cd600e9c9a6831, type: 2}
