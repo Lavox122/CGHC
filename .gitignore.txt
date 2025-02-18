@@ -3,8 +3,7 @@ Temp/
 Library/
 Logs/
 Obj/
+MemoryCaptures/
 .vs/
 .vscode/
 UserSettings/
-Packages/
-MemoryCaptures/
