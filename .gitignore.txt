@@ -1,9 +1,0 @@
-# Ignore Unity generated files
-Temp/
-Library/
-Logs/
-Obj/
-MemoryCaptures/
-.vs/
-.vscode/
-UserSettings/
