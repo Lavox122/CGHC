@@ -35,7 +35,7 @@ public class PathFollow : MonoBehaviour
         transform.position = _currentPosition + points[0];
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         Move();
     }
@@ -89,6 +89,16 @@ public class PathFollow : MonoBehaviour
         {
             _currentPoint = 0;
         }
+    }
+
+    public int CurrentWaypointNumber()
+    {
+        return _currentPoint;
+    }
+
+    public int PathLength()
+    {
+        return points.Count;
     }
 
     private void OnDrawGizmos()

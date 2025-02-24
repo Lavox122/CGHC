@@ -6,17 +6,36 @@ using UnityEngine;
 public class MovingPlatform : PathFollow
 {
     public bool CollidingWithPlayer { get; set; }
-
+    public bool loop = true; //to control between looping platform and stopping at the end
+    public bool Activated = true; //set to false to make it activate only when player is on it
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
             CollidingWithPlayer = true;
+            Activated = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         CollidingWithPlayer = false;
+    }
+
+    protected override void Update()
+    {
+        if (!Activated && !loop) return;
+
+        base.Update();
+
+        if(!loop && ReachedEnd())
+        {
+            enabled = false;
+        }
+    }
+
+    private bool ReachedEnd()
+    {
+        return CurrentWaypointNumber() >= PathLength() - 1;
     }
 }
