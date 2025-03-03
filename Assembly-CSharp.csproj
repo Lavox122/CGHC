@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\AI\Core\AIAction.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
+    <Compile Include="Assets\Scripts\ParallaxBG.cs" />
     <Compile Include="Assets\Scripts\Gun\Projectile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
