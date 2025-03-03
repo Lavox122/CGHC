@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParallaxBG : MonoBehaviour
 {
-    [SerializeField] private Vector2 parallaxFactor;
+    [SerializeField] private Vector2 parallaxFactor = new Vector2(0.5f, 0.3f);
     private Transform cameraTransform;
     private Vector3 previousCameraPosition;
     private float spriteWidthInUnits;
@@ -27,7 +27,7 @@ public class ParallaxBG : MonoBehaviour
         spriteWidthInUnits = textureWidth / pixelPerUnit;
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     private void LateUpdate()
     {
         Vector3 currentCameraPosition = cameraTransform.position;
