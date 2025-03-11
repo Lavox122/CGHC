@@ -90,6 +90,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioLibrary.cs" />
     <Compile Include="Assets\Scripts\AI\Action\ActionFollowTarget.cs" />
+    <Compile Include="Assets\Scripts\BossLocking.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDamage.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerStates.cs" />
