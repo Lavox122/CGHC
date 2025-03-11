@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SetCheckpointSpawn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform spawnPoint;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            spawnPoint.position = transform.position;
+            Debug.Log("changed");
+        }
     }
 }
