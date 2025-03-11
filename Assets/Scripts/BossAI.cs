@@ -47,13 +47,21 @@ public class BossAI : MonoBehaviour
 
     private float GetAnimationLength(string animationName)
     {
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        while (!stateInfo.IsName(animationName))
+        float timeout = 2f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < timeout)
         {
-            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            while (!stateInfo.IsName(animationName))
+            {
+                return stateInfo.length;
+            }
+            elapsedTime += Time.deltaTime;
         }
 
-        return stateInfo.length;
+        return 1f;
+        
     }
 
     private void Teleport()
