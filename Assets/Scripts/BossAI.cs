@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAI : MonoBehaviour
@@ -10,9 +9,8 @@ public class BossAI : MonoBehaviour
 
     public Transform PointA;
     public Transform PointB;
-    private bool moving;
+    private bool goingToPointB = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -30,6 +28,7 @@ public class BossAI : MonoBehaviour
             if (action == 0)
             {
                 animator.SetTrigger("Jump");
+                yield return new WaitForSeconds(0.2f);
                 yield return new WaitUntil(() => !canAct);
             }
             else
@@ -42,30 +41,11 @@ public class BossAI : MonoBehaviour
         }
     }
 
-    private float GetAnimationLength(string animationName)
-    {
-        float timeout = 2f;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < timeout)
-        {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            while (!stateInfo.IsName(animationName))
-            {
-                return stateInfo.length;
-            }
-            elapsedTime += Time.deltaTime;
-        }
-
-        return 1f;
-        
-    }
-
     private void Teleport()
     {
-        moving = !moving;
-        Transform target = moving ? PointA : PointB;
-        transform.position = target.position;
+        goingToPointB = !goingToPointB;
+        Transform target = goingToPointB ? PointA : PointB;
+        transform.parent.position = target.position;
     }
 
     private void TakeDamage(Collider2D objectCollided)
@@ -102,5 +82,5 @@ public class BossAI : MonoBehaviour
     {
         Teleport();
         animator.SetTrigger("JumpFinished");
-    }    
+    }
 }
