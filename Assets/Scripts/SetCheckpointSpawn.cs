@@ -8,7 +8,6 @@ public class SetCheckpointSpawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("entered trigger");
         if (other.CompareTag("Player"))
         {
             spawnPoint.transform.position = transform.position;
