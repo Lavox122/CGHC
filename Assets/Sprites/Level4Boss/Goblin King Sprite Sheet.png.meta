@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,9 +93,1114 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 640
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f815dc05252b5fb4396017ea4fc8ef0d
+      internalID: 341352962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 640
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab731a7e146915408aefefa6c4a31c9
+      internalID: -531764146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 640
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eff98b51263ef48a0e556caa3baf0b
+      internalID: -1314579324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle4
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 640
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ac074f1a7ee3040ba58ef304bbabb4
+      internalID: 681251805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 448
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfa9cf89c3f76d459dc1d6b533bf9b6
+      internalID: -1091949908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 448
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0368d304915974d93ff6ce2df74577
+      internalID: 1002420176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 448
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc32aad37d36d344b820db4aeabb2e3f
+      internalID: 1452619065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 448
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0852b9a2bc9ed6b43979a4c16e658728
+      internalID: -731875126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed678aa44c7add14fabf73d4634a154f
+      internalID: -420770041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw6
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ace943a0ef99ce499e35d9841f43b1a
+      internalID: -101536676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw7
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9803575abb706f42ae31f4007c9570a
+      internalID: 947256817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw8
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a44d069e521f4340978dfd12272032f
+      internalID: 1342850248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin King Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6dc76ea54945042b27d144e3f1300c
+      internalID: -1621664492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw9
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf8c67fdc0746b45ad334958ccad956
+      internalID: -1790300950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw10
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d837d714f892749842bf6f0e6c0618
+      internalID: -250465535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw11
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 448
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c1a3d4dc4ea974c8f79edaaea6d302
+      internalID: -1573422565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 384
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae202fe04a9d3043a4d66ac7fe3c32b
+      internalID: 1684462958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 384
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f938330cbf23b4e9b6d00d253e31ce
+      internalID: 838783301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw14
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 384
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5998a1dd60a9594eb7766e4ee07b098
+      internalID: 670636345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw15
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 384
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede53ce6d8e727441b1c4366457ac27d
+      internalID: 1916454194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw16
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 384
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3657c8c374f906643b8a9d50c7b8da85
+      internalID: -784361685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw17
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 384
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b371efb716e9745b8cf9b7acefe9e1
+      internalID: -466004170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw18
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 384
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f77f41502f5d4949990d52e1695d7a9
+      internalID: -1628883116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Throw19
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 384
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e03c7a3785bbd4ca24a2030aa09a12
+      internalID: 292291573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 256
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eaf71c033b2189489c82a4e14ea5378
+      internalID: 567355143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 256
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d01eeb0104c170479ea7125a13c63f8
+      internalID: -2039687899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 256
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3287d0587907bb9479aa212086f79c4d
+      internalID: 1832033203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die4
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 256
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5d5bc89c68fad4181757ca5b1ec801
+      internalID: -1447443022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 192
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fd3d9d92de8724188be2164f369237
+      internalID: 250143334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 192
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ee26d86f53cf74592e382e43fd5742
+      internalID: 1631499751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 194
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bfc5a3ab714f141869cf6f7afef161
+      internalID: 1862096784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 192
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3336e2e9ed66fec42879add1459d0912
+      internalID: 262773791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die9
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 192
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2926a74f2c3684788d34c125fd2ae0
+      internalID: -654907483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die10
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 192
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435d691a9f783334082ed6be61f34bfb
+      internalID: 537540083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 192
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780a4ec99bcc29545861aa86c86fb7d1
+      internalID: 1369083647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die12
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 192
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817859dca75f63c488d9981ad9812fac
+      internalID: 844504887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 192
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753ac3ed8eaf7404d812f7a1431d56aa
+      internalID: 442664470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die14
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 192
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73bf8e2a21060e9468dbfff74bdd59a6
+      internalID: -954703981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Die15
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 192
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb80554783ff9b4bbbc66d514055191
+      internalID: -1583787240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 64
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31532013095651042891bd93d1c2d721
+      internalID: 903911160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 64
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0faa3aa335aba304fbe7363382fa44c7
+      internalID: 1228778224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 65
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1478ed6081623bc418fed2ff13c16f9a
+      internalID: 542064289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 64
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1582203a0706cd845b129a1d38cb59c3
+      internalID: -1004902769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump5
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 64
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1783e2d8a504d864685da43415c27e99
+      internalID: -1763627576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 15
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4ed00cde38ca4489f831136efc371b
+      internalID: -1500260284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347ccedf11b3ba545b4741347712148e
+      internalID: -371328584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a414727a8a64244adb0ff98f05a436
+      internalID: 1707149954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop5
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10503cd1fa59fb4e9a57a7897a85559
+      internalID: -485176196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop6
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8d56c68cb53c44692cdd7ac31649fd
+      internalID: 1433384233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop7
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a23bcb5c53c6a5409b429a79a6da0d9
+      internalID: 2058347245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 25
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f5520584e340646bcc745083fab07e
+      internalID: 993819256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump6
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 79
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab4070c158e4b24f8f7365b37735835
+      internalID: 545750455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +1211,100 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Die1: 567355143
+      Die10: 537540083
+      Die11: 1369083647
+      Die12: 844504887
+      Die13: 442664470
+      Die14: -954703981
+      Die15: -1583787240
+      Die2: -2039687899
+      Die3: 1832033203
+      Die4: -1447443022
+      Die5: 250143334
+      Die6: 1631499751
+      Die7: 1862096784
+      Die8: 262773791
+      Die9: -654907483
+      Drop1: 993819256
+      Drop2: -1500260284
+      Drop3: -371328584
+      Drop4: 1707149954
+      Drop5: -485176196
+      Drop6: 1433384233
+      Drop7: 2058347245
+      Goblin King Sprite Sheet_10: -1297471647
+      Goblin King Sprite Sheet_11: 588277029
+      Goblin King Sprite Sheet_12: 1363300634
+      Goblin King Sprite Sheet_13: -1964817711
+      Goblin King Sprite Sheet_14: 1969282974
+      Goblin King Sprite Sheet_15: -13731676
+      Goblin King Sprite Sheet_16: -286283975
+      Goblin King Sprite Sheet_17: -831160668
+      Goblin King Sprite Sheet_18: -682364606
+      Goblin King Sprite Sheet_25: 1207643062
+      Goblin King Sprite Sheet_27: -220002595
+      Goblin King Sprite Sheet_29: 1313108641
+      Goblin King Sprite Sheet_30: -1621664492
+      Goblin King Sprite Sheet_42: -972373046
+      Goblin King Sprite Sheet_43: -710339465
+      Goblin King Sprite Sheet_44: 1989859746
+      Goblin King Sprite Sheet_45: -1757237888
+      Goblin King Sprite Sheet_46: 1534628133
+      Goblin King Sprite Sheet_47: -550849382
+      Goblin King Sprite Sheet_48: 1058118071
+      Goblin King Sprite Sheet_49: 1294630179
+      Goblin King Sprite Sheet_5: -293908412
+      Goblin King Sprite Sheet_50: 246549889
+      Goblin King Sprite Sheet_51: 1354486047
+      Goblin King Sprite Sheet_52: 899133587
+      Goblin King Sprite Sheet_53: 1680297247
+      Goblin King Sprite Sheet_54: 1913270842
+      Goblin King Sprite Sheet_55: 1134883346
+      Goblin King Sprite Sheet_56: 1204348693
+      Goblin King Sprite Sheet_57: 755528276
+      Goblin King Sprite Sheet_58: -903770580
+      Goblin King Sprite Sheet_59: -1381990157
+      Goblin King Sprite Sheet_6: -1698808634
+      Goblin King Sprite Sheet_7: -1738005167
+      Goblin King Sprite Sheet_75: 907411279
+      Goblin King Sprite Sheet_76: 1679152661
+      Goblin King Sprite Sheet_77: -1484754372
+      Goblin King Sprite Sheet_78: 1405998375
+      Goblin King Sprite Sheet_79: -1445152064
+      Goblin King Sprite Sheet_8: 646703041
+      Goblin King Sprite Sheet_80: -1901120580
+      Goblin King Sprite Sheet_9: 56690246
+      Idle1: 341352962
+      Idle2: -531764146
+      Idle3: -1314579324
+      Idle4: 681251805
+      Jump1: 903911160
+      Jump2: 1228778224
+      Jump3: 542064289
+      Jump4: -1004902769
+      Jump5: -1763627576
+      Jump6: 545750455
+      Throw1: -1091949908
+      Throw10: -250465535
+      Throw11: -1573422565
+      Throw12: 1684462958
+      Throw13: 838783301
+      Throw14: 670636345
+      Throw15: 1916454194
+      Throw16: -784361685
+      Throw17: -466004170
+      Throw18: -1628883116
+      Throw19: 292291573
+      Throw2: 1002420176
+      Throw3: 1452619065
+      Throw4: -731875126
+      Throw5: -420770041
+      Throw6: -101536676
+      Throw7: 947256817
+      Throw8: 1342850248
+      Throw9: -1790300950
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
