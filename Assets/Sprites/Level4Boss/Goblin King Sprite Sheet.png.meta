@@ -116,7 +116,7 @@ TextureImporter:
         x: 15
         y: 640
         width: 34
-        height: 41
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +178,8 @@ TextureImporter:
         serializedVersion: 2
         x: 206
         y: 640
-        width: 35
-        height: 41
+        width: 36
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -932,10 +932,10 @@ TextureImporter:
       name: Jump1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 14
         y: 64
-        width: 34
-        height: 38
+        width: 36
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -953,10 +953,10 @@ TextureImporter:
       name: Jump2
       rect:
         serializedVersion: 2
-        x: 79
+        x: 78
         y: 64
-        width: 34
-        height: 35
+        width: 36
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -974,10 +974,10 @@ TextureImporter:
       name: Jump3
       rect:
         serializedVersion: 2
-        x: 143
-        y: 65
-        width: 34
-        height: 34
+        x: 142
+        y: 64
+        width: 36
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -998,7 +998,7 @@ TextureImporter:
         x: 204
         y: 64
         width: 36
-        height: 28
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1016,9 +1016,9 @@ TextureImporter:
       name: Jump5
       rect:
         serializedVersion: 2
-        x: 277
+        x: 271
         y: 64
-        width: 22
+        width: 36
         height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1184,10 +1184,10 @@ TextureImporter:
       name: Jump6
       rect:
         serializedVersion: 2
-        x: 339
-        y: 79
-        width: 25
-        height: 49
+        x: 334
+        y: 69
+        width: 36
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
