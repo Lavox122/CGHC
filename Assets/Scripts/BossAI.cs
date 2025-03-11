@@ -30,10 +30,7 @@ public class BossAI : MonoBehaviour
             if (action == 0)
             {
                 animator.SetTrigger("Jump");
-
-                yield return new WaitForSeconds(GetAnimationLength("Jump"));
-
-                Teleport();
+                yield return new WaitUntil(() => !canAct);
             }
             else
             {
@@ -100,4 +97,10 @@ public class BossAI : MonoBehaviour
     {
         ProjectilePooler.OnProjectileCollision -= TakeDamage;
     }
+
+    public void AnimationEvent_Teleport()
+    {
+        Teleport();
+        animator.SetTrigger("JumpFinished");
+    }    
 }
