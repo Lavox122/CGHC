@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SetCheckpointSpawn : MonoBehaviour
 {
-    public Transform spawnPoint;
+    public GameObject spawnPoint;
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+        Debug.Log("entered trigger");
+        if (other.CompareTag("Player"))
         {
-            spawnPoint.position = transform.position;
+            spawnPoint.transform.position = transform.position;
             Debug.Log("changed");
         }
     }
