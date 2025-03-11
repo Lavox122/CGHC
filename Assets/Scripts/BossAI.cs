@@ -24,7 +24,6 @@ public class BossAI : MonoBehaviour
         while (health > 0)
         {
             yield return new WaitUntil(() => canAct);
-
             canAct = false;
 
             int action = Random.Range(0, 2);
@@ -34,10 +33,7 @@ public class BossAI : MonoBehaviour
 
                 yield return new WaitForSeconds(GetAnimationLength("Jump"));
 
-                yield return StartCoroutine(MoveBetweenPoints());
-
-                animator.SetTrigger("Drop");
-                yield return new WaitForSeconds(GetAnimationLength("Drop"));
+                Teleport();
             }
             else
             {
@@ -51,28 +47,20 @@ public class BossAI : MonoBehaviour
 
     private float GetAnimationLength(string animationName)
     {
-        AnimatorStateInfo stateInfo;
-
-        do
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        while (!stateInfo.IsName(animationName))
         {
             stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        } while (!stateInfo.IsName(animationName));
+        }
 
         return stateInfo.length;
     }
 
-    IEnumerator MoveBetweenPoints()
+    private void Teleport()
     {
-        Transform target = moving ? PointA : PointB;
         moving = !moving;
-
-        float moveSpeed = 100f;
-
-        while (Vector2.Distance(transform.position, target.position) > 0.1f)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
+        Transform target = moving ? PointA : PointB;
+        transform.position = target.position;
     }
 
     private void TakeDamage(Collider2D objectCollided)
