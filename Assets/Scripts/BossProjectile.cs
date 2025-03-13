@@ -14,10 +14,12 @@ public class BossProjectile : Projectile
     {
         if (hasTarget)
         {
+            Debug.Log($"BossProjectile moving to {targetPosition}, current position: {transform.position}");
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
+                Debug.Log("Explode");
                 Explode();
             }
         }
@@ -31,6 +33,7 @@ public class BossProjectile : Projectile
     {
         targetPosition = target;
         hasTarget = true;
+        Debug.Log($"BossProjectile Target : {targetPosition}");
     }
 
     private void Explode()

@@ -84,8 +84,10 @@ public class BossAI : MonoBehaviour
 
     private void Shoot()
     {
+        Vector3 fixedTargetPosition = endShoot.position;
+
         GameObject projectile = Instantiate(Bullet, startShoot.position, Quaternion.identity);
-        projectile.GetComponent<BossProjectile>().SetTarget(endShoot.position);
+        projectile.GetComponent<BossProjectile>().SetTarget(fixedTargetPosition);
     }
 
     public void AnimationEvent_Teleport()
