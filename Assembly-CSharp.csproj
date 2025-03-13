@@ -145,6 +145,7 @@
     <Compile Include="Assets\Scripts\BossAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\BossFlip.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera2DShake.cs" />
     <Compile Include="Assets\Scripts\Level Components\Jumper.cs" />
     <Compile Include="Assets\Scripts\Level Components\Blade.cs" />

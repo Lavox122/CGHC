@@ -18,6 +18,7 @@ public class BossAI : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
         StartCoroutine(BossActionLoop());
     }
 
