@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -11,9 +10,12 @@ public class Health : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private int lifes = 3;
-
+    
+    [Header("UI Settings")]
+    [SerializeField] private Image healthFillImage; // Assign UI Image in Inspector
+    [SerializeField] private Material healthMaterial; // Assign Material with Alpha Mask shader
+	
     public int MaxLifes => _maxLifes;
-
     public int CurrentLifes => _currentLifes;
 
     private int _maxLifes;
@@ -83,6 +85,19 @@ public class Health : MonoBehaviour
     private void UpdateLifesUI()
     {
         OnLifesChanged?.Invoke(_currentLifes);
+
+        // Update UI Image Fill
+        if (healthFillImage != null)
+        {
+            healthFillImage.fillAmount = (float)_currentLifes / _maxLifes;
+        }
+
+        // Update Alpha Mask Shader Cutoff (For Smooth Effect)
+        if (healthMaterial != null)
+        {
+            float cutoff = 1.0f - ((float)_currentLifes / _maxLifes);
+            healthMaterial.SetFloat("_Cutoff", cutoff);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
