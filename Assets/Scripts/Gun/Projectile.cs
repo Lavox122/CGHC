@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
         Speed = speed;
     }
 
-    private void Update()
+    protected  virtual void Update()
     {
         transform.Translate(_shootDirection * Speed * Time.deltaTime);
     }

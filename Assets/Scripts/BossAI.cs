@@ -11,6 +11,10 @@ public class BossAI : MonoBehaviour
     public Transform PointB;
     private bool goingToPointB = true;
 
+    public Transform startShoot;
+    public Transform endShoot;
+    public GameObject Bullet;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -78,9 +82,20 @@ public class BossAI : MonoBehaviour
         ProjectilePooler.OnProjectileCollision -= TakeDamage;
     }
 
+    private void Shoot()
+    {
+        GameObject projectile = Instantiate(Bullet, startShoot.position, Quaternion.identity);
+        projectile.GetComponent<BossProjectile>().SetTarget(endShoot.position);
+    }
+
     public void AnimationEvent_Teleport()
     {
         Teleport();
         animator.SetTrigger("JumpFinished");
+    }
+
+    public void AnimationEvent_Shoot()
+    {
+        Shoot();
     }
 }
