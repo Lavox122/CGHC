@@ -53,6 +53,8 @@ public class Health : MonoBehaviour
     public void LoseLife()
     {
         _currentLifes -= 1;
+		Debug.Log("Life Lost! Current Lives: " + _currentLifes); // Debug log
+		
         if (_currentLifes <= 0)
         {
             _currentLifes = 0;
@@ -82,23 +84,11 @@ public class Health : MonoBehaviour
         OnRevive?.Invoke(gameObject.GetComponent<PlayerMotor>());
     }
 
-    private void UpdateLifesUI()
+        private void UpdateLifesUI()
     {
         OnLifesChanged?.Invoke(_currentLifes);
+    }    
 
-        // Update UI Image Fill
-        if (healthFillImage != null)
-        {
-            healthFillImage.fillAmount = (float)_currentLifes / _maxLifes;
-        }
-
-        // Update Alpha Mask Shader Cutoff (For Smooth Effect)
-        if (healthMaterial != null)
-        {
-            float cutoff = 1.0f - ((float)_currentLifes / _maxLifes);
-            healthMaterial.SetFloat("_Cutoff", cutoff);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
