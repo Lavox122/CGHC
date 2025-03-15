@@ -15,6 +15,7 @@ public class BossLocking : MonoBehaviour
         {
             Gate.SetActive(true);
             Boss.SetActive(true);
+            this.enabled = false;
         }
     }
 }
