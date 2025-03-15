@@ -14,6 +14,7 @@ public class BossAI : MonoBehaviour
     public Transform startShoot;
     public Transform endShoot;
     public GameObject Bullet;
+    public GameObject Gates;
 
     void Start()
     {
@@ -55,10 +56,10 @@ public class BossAI : MonoBehaviour
 
     private void TakeDamage(Collider2D objectCollided)
     {
-        if (objectCollided.GetComponent<StateController>() != null)
+        if (objectCollided.GetComponent<BossAI>() != null)
         {
-            Destroy(objectCollided.gameObject);
             health -= 1;
+            Debug.Log("Boss Health:" + health);
 
             if (health <= 0)
             {
@@ -69,8 +70,10 @@ public class BossAI : MonoBehaviour
 
     private void Die()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        Gates.SetActive(false);
         animator.SetTrigger("Die");
-        Destroy(gameObject, 40f);
     }
 
     private void OnEnable()
