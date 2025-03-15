@@ -14,6 +14,17 @@ public class PauseMenuController : MonoBehaviour
     [Header("Reference your Player object here")]
     public GameObject player;
 
+    // Awake is called before Start. This ensures the player is enabled as early as possible.
+    private void Awake()
+    {
+        if (player != null)
+        {
+            // Ensure the player's GameObject is active
+            player.SetActive(true);
+            EnablePlayerControls();
+        }
+    }
+
     private void Start()
     {
         // Always start unpaused
@@ -35,9 +46,6 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuCanvasGroup.interactable = false;
             pauseMenuCanvasGroup.blocksRaycasts = false;
         }
-
-        // Enable the player
-        EnablePlayerControls();
     }
 
     private void Update()
@@ -74,7 +82,7 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuCanvasGroup.blocksRaycasts = true;
         }
 
-        // Disable player
+        // Disable player controls
         DisablePlayerControls();
     }
 
@@ -90,7 +98,7 @@ public class PauseMenuController : MonoBehaviour
 
         // Resume time
         Time.timeScale = 1f;
-        Input.ResetInputAxes(); // optional
+        Input.ResetInputAxes();
 
         // Hide CanvasGroup if used
         if (pauseMenuCanvasGroup != null)
@@ -100,7 +108,7 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuCanvasGroup.blocksRaycasts = false;
         }
 
-        // Enable player
+        // Enable player controls
         EnablePlayerControls();
     }
 
@@ -131,7 +139,7 @@ public class PauseMenuController : MonoBehaviour
     // Restart the current scene
     public void RestartGame()
     {
-        // Make sure we reset everything so no leftover states carry over
+        // Reset state to avoid leaving the player disabled
         isPaused = false;
         Time.timeScale = 1f;
         EnablePlayerControls();
@@ -143,12 +151,12 @@ public class PauseMenuController : MonoBehaviour
     // Load the Main Menu scene
     public void LoadMainMenu()
     {
-        // Unpause before switching scenes
+        // Reset state before switching scenes
         isPaused = false;
         Time.timeScale = 1f;
         EnablePlayerControls();
 
-        // Replace "Main Menu" with the correct scene name
+        // Replace "Main Menu" with the correct scene name if needed
         SceneManager.LoadScene("Main Menu");
     }
 }
