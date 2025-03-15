@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea2233816068414894867783f9cb7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jetpackForce: 3
+  jetpackForce: 10
   jetpackFuel: 5
 --- !u!95 &988753272519134150
 Animator:

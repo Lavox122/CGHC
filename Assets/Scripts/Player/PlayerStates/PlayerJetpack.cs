@@ -6,7 +6,7 @@ using UnityEngine.Animations;
 public class PlayerJetpack : PlayerStates
 {
     [Header("Settings")]
-    [SerializeField] private float jetpackForce = 3f;
+    [SerializeField] private float jetpackForce = 10f;
     [SerializeField] private float jetpackFuel = 5f;
 
     public float JetpackFuel { get; set; }

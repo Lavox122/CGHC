@@ -14,6 +14,11 @@ public class BossAI : MonoBehaviour
     public Transform startShoot;
     public Transform endShoot;
     public GameObject Bullet;
+    public GameObject Gates;
+
+    public GameObject RocksPrefab;
+    public Vector2 spawnAreaMin;
+    public Vector2 spawnAreaMax;
 
     void Start()
     {
@@ -55,10 +60,10 @@ public class BossAI : MonoBehaviour
 
     private void TakeDamage(Collider2D objectCollided)
     {
-        if (objectCollided.GetComponent<StateController>() != null)
+        if (objectCollided.GetComponent<BossAI>() != null)
         {
-            Destroy(objectCollided.gameObject);
             health -= 1;
+            Debug.Log("Boss Health:" + health);
 
             if (health <= 0)
             {
@@ -69,8 +74,38 @@ public class BossAI : MonoBehaviour
 
     private void Die()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
+
+        Gates.SetActive(false);
         animator.SetTrigger("Die");
-        Destroy(gameObject, 40f);
+    }
+
+    private void RockDrop()
+    {
+        int numberOfRocks = Random.Range(3, 6);
+
+        for (int i = 0; i < numberOfRocks; i++) 
+        {
+            Vector2 spawnPosition = GetRandomSpawnPosition();
+            Instantiate(RocksPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 center = new Vector3((spawnAreaMin.x + spawnAreaMax.x) / 2, (spawnAreaMin.y + spawnAreaMax.y) / 2, 0);
+        Vector3 size = new Vector3(spawnAreaMax.x - spawnAreaMin.x, spawnAreaMax.y - spawnAreaMin.y, 1);
+
+        Gizmos.DrawWireCube(center, size);
+    }
+
+    private Vector2 GetRandomSpawnPosition()
+    {
+        float randomX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
+        float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
+        return new Vector2 (randomX, randomY);
     }
 
     private void OnEnable()
@@ -100,5 +135,10 @@ public class BossAI : MonoBehaviour
     public void AnimationEvent_Shoot()
     {
         Shoot();
+    }
+
+    public void AnimationEvent_Rocks()
+    {
+        RockDrop();
     }
 }
