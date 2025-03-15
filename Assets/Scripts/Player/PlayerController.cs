@@ -13,18 +13,10 @@ public class PlayerController : MonoBehaviour
 
     #region Properties
 
-    // Return if the Player is facing Right
     public bool FacingRight { get; set; }
-
-    // Return the Gravity value
     public float Gravity => gravity;
-
-    // Return the Force applied 
     public Vector2 Force => _force;
-
-    // Return the conditions
     public PlayerConditions Conditions => _conditions;
-
     public float Friction { get; set; }
 
     #endregion
@@ -58,7 +50,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
-
         _conditions = new PlayerConditions();
         _conditions.Reset();
     }
@@ -67,7 +58,6 @@ public class PlayerController : MonoBehaviour
     {
         ApplyGravity();
         StartMovement();
-
         EnterPlatformMovement();
         SetRayOrigins();
         GetFaceDirection();
@@ -86,7 +76,6 @@ public class PlayerController : MonoBehaviour
         CollisionAbove();
 
         transform.Translate(_movePosition, Space.Self);
-
         SetRayOrigins();
         CalculateMovement();
     }
@@ -111,28 +100,24 @@ public class PlayerController : MonoBehaviour
         if (!_conditions.IsFalling)
         {
             _conditions.IsCollidingBelow = false;
-            return;  // if the Player going UP, then return because no point to calculate other colliding below.
+            return;
         }
 
-        // Calculate ray lenght
         float rayLenght = _boundsHeight / 2f + _skin;
         if (_movePosition.y < 0)
         {
             rayLenght += Mathf.Abs(_movePosition.y);
         }
 
-        // Calculate ray origin
         Vector2 leftOrigin = (_boundsBottomLeft + _boundsTopLeft) / 2f;
         Vector2 rightOrigin = (_boundsBottomRight + _boundsTopRight) / 2f;
         leftOrigin += (Vector2)(transform.up * _skin) + (Vector2)(transform.right * _movePosition.x);
         rightOrigin += (Vector2)(transform.up * _skin) + (Vector2)(transform.right * _movePosition.x);
 
-        // Raycast
         for (int i = 0; i < verticalRayAmount; i++)
         {
             Vector2 rayOrigin = Vector2.Lerp(leftOrigin, rightOrigin, (float)i / (float)(verticalRayAmount - 1));
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -transform.up, rayLenght, collideWith);
-            Debug.DrawRay(rayOrigin, -transform.up * rayLenght, Color.green);
 
             if (hit)
             {

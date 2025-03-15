@@ -20,7 +20,6 @@ public class Health : MonoBehaviour
     {
         _maxLifes = lifes;
         _currentLifes = lifes; // Ensure current health is set properly
-        Debug.Log("Health initialized: " + _currentLifes); // Debug log
     }
 
     private void Start()
@@ -60,8 +59,6 @@ public class Health : MonoBehaviour
             _currentLifes -= 1;
         }
 
-        Debug.Log("Life Lost! Current Lives: " + _currentLifes); // Debug log
-
         if (_currentLifes <= 0)
         {
             _currentLifes = 0;
@@ -93,8 +90,6 @@ public class Health : MonoBehaviour
 
     private void UpdateLifesUI()
     {
-        Debug.Log("Updating UI: Current Lives = " + _currentLifes);
-        
         OnLifesChanged?.Invoke(_currentLifes); // Notify UIManager to update health UI
         UIManager.Instance.OnPlayerLifes(_currentLifes);
     }

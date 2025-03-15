@@ -1,25 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
-    public static bool isPaused = false; // Global pause flag
-    public GameObject pauseMenuUI; // Assign in Inspector
-    public CanvasGroup pauseMenuCanvasGroup; // Assign in Inspector
-    public GameObject player; // Assign Player GameObject in Inspector
+    public static bool isPaused = false;
+    public GameObject pauseMenuUI;
+    public CanvasGroup pauseMenuCanvasGroup;
+    public GameObject player;
 
     void Start()
     {
         if (pauseMenuCanvasGroup != null)
         {
-            pauseMenuCanvasGroup.alpha = 0; // Hide menu initially
+            pauseMenuCanvasGroup.alpha = 0;
             pauseMenuCanvasGroup.interactable = false;
             pauseMenuCanvasGroup.blocksRaycasts = false;
         }
+
+        EnablePlayerControls();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // Press ESC to pause/unpause
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
                 ResumeGame();
@@ -31,40 +34,45 @@ public class PauseMenuController : MonoBehaviour
     private void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0.01f; // Almost stopped, but UI still responsive
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
 
         if (pauseMenuCanvasGroup != null)
         {
-            pauseMenuCanvasGroup.alpha = 1; // Show menu
+            pauseMenuCanvasGroup.alpha = 1;
             pauseMenuCanvasGroup.interactable = true;
             pauseMenuCanvasGroup.blocksRaycasts = true;
         }
 
         DisablePlayerControls();
-        Debug.Log("Game is PAUSED.");
     }
 
     private void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f; // Resume game time
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        Input.ResetInputAxes();
 
         if (pauseMenuCanvasGroup != null)
         {
-            pauseMenuCanvasGroup.alpha = 0; // Hide menu
+            pauseMenuCanvasGroup.alpha = 0;
             pauseMenuCanvasGroup.interactable = false;
             pauseMenuCanvasGroup.blocksRaycasts = false;
         }
 
         EnablePlayerControls();
-        Debug.Log("Game is RESUMED.");
     }
 
     private void DisablePlayerControls()
     {
         if (player != null)
         {
-            player.GetComponent<PlayerController>().enabled = false; // Disable movement
+            PlayerController controller = player.GetComponent<PlayerController>();
+            if (controller != null)
+            {
+                controller.enabled = false;
+            }
         }
     }
 
@@ -72,7 +80,25 @@ public class PauseMenuController : MonoBehaviour
     {
         if (player != null)
         {
-            player.GetComponent<PlayerController>().enabled = true; // Re-enable movement
+            PlayerController controller = player.GetComponent<PlayerController>();
+            if (controller != null)
+            {
+                controller.enabled = true;
+            }
         }
+    }
+
+    // Restart the current scene
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Ensure time resumes
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // Load the Main Menu scene
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f; // Ensure time resumes
+        SceneManager.LoadScene("MainMenu"); // Change "MainMenu" to your scene name
     }
 }

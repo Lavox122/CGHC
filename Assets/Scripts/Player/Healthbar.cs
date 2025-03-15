@@ -22,7 +22,5 @@ public class Healthbar : MonoBehaviour
         // Set the appropriate trigger based on life count
         string triggerName = "HP" + currentLifes;
         healthAnimator.SetTrigger(triggerName);
-
-        Debug.Log("Health animation updated: " + triggerName);
     }
 }
