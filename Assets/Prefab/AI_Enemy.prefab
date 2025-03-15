@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 2880405916834331392}
   - component: {fileID: 5451132116689888123}
   - component: {fileID: 3611261732492944849}
+  - component: {fileID: 3055520330196626667}
   m_Layer: 10
   m_Name: AI_Enemy
   m_TagString: Untagged
@@ -187,7 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc99c55f5f18134a9c9bff2654ce4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 5
   scoreValue: 10
 --- !u!61 &5451132116689888123
 BoxCollider2D:
@@ -261,3 +261,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3055520330196626667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5632360543777852510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92525350692cc7468765291b21507f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instantKill: 0
