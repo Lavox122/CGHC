@@ -210,7 +210,7 @@ TextureImporter:
         width: 80
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,6 +218,48 @@ TextureImporter:
       bones: []
       spriteID: 8152b692b6b152f4da092355739cd8de
       internalID: 995012144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Heart_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 45
+        width: 80
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524bec3b818defa4ea921e5f1e91cd6c
+      internalID: 1723027501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Heart_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 46
+        width: 76
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1bd5d1faf76014b99f3baf1dfc8c60
+      internalID: -41240487
       vertices: []
       indices: 
       edges: []

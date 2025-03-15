@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,10 +9,6 @@ public class Health : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private int lifes = 5; // Number of lifes the player has
-    
-    [Header("UI Settings")]
-    [SerializeField] private Image healthFillImage; // Assign UI Image in Inspector
-    [SerializeField] private Material healthMaterial; // Assign Material with Alpha Mask shader
     
     public int MaxLifes => _maxLifes;
     public int CurrentLifes => _currentLifes;
@@ -41,7 +36,7 @@ public class Health : MonoBehaviour
             LoseLife();
         }
 
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             AddLife();
         }
@@ -102,22 +97,6 @@ public class Health : MonoBehaviour
         
         OnLifesChanged?.Invoke(_currentLifes); // Notify UIManager to update health UI
         UIManager.Instance.OnPlayerLifes(_currentLifes);
-
-        // Assuming you have a method to update the health bar visuals
-        UpdateHealthBarVisuals(_currentLifes, _maxLifes);
-    }
-
-    private void UpdateHealthBarVisuals(int currentLifes, int maxLifes)
-    {
-        // Implement the logic to update the health bar visuals here
-        // This could involve setting the fill amount of the healthFillImage
-        // or updating the material properties of the healthMaterial
-
-        // Example: Update the fill amount of the healthFillImage
-        if (healthFillImage != null)
-        {
-            healthFillImage.fillAmount = (float)currentLifes / maxLifes;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
