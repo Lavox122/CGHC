@@ -18,22 +18,37 @@ public class Gun : MonoBehaviour
     [SerializeField] private bool autoReload = true;
     [SerializeField] private float reloadTime = 3f;
 
-    // Reference of the GunController 
+    [Header("Visuals")]
+    [SerializeField] private Sprite normalGunSprite; // Original gun sprite
+    [SerializeField] private Sprite emptyGunSprite; // Gun sprite when out of ammo
+    [SerializeField] private GameObject magazinePrefab; // Magazine object to drop
+    [SerializeField] private Transform magazineDropPoint; // Where the magazine appears
+
+    // Reference to GunController
     public GunController GunController { get; set; }
 
     private ObjectPooler _pooler;
+    private SpriteRenderer _spriteRenderer; // Automatically gets the gun's SpriteRenderer
     private float _nextShotTime;
-
-    private float _reloadTimer;
     private bool _isReloading;
-    private int _projectilesRamaining;
+    private int _projectilesRemaining;
 
     private int _fireParameter = Animator.StringToHash("Fire");
 
     private void Start()
     {
         _pooler = GetComponent<ObjectPooler>();
-        _projectilesRamaining = magazineSize;
+        _spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer from the same object
+        _projectilesRemaining = magazineSize;
+
+        if (_spriteRenderer != null)
+        {
+            _spriteRenderer.sprite = normalGunSprite; // Set initial sprite
+        }
+        else
+        {
+            Debug.LogError("Gun is missing a SpriteRenderer!", this);
+        }
     }
 
     private void Update()
@@ -47,43 +62,45 @@ public class Gun : MonoBehaviour
     // Fires a projectile from the firePoint
     private void FireProjectile()
     {
-        // Get Object from pool
         GameObject newProjectile = _pooler.GetObjectFromPool();
         newProjectile.transform.position = firePoint.position;
         newProjectile.SetActive(true);
 
-        // Get projectile
         Projectile projectile = newProjectile.GetComponent<Projectile>();
         projectile.GunEquipped = this;
         projectile.SetDirection(GunController.PlayerController.FacingRight ? Vector3.right : Vector3.left);
         projectile.EnableProjectile();
 
-        // Set animation
         modelAnimator.SetTrigger(_fireParameter);
     }
 
-    // Shoots our Gun
+    // Shoots the Gun
     public void Shoot()
     {
-        if (Time.time > _nextShotTime && !_isReloading && _projectilesRamaining > 0)
+        if (Time.time > _nextShotTime && !_isReloading && _projectilesRemaining > 0)
         {
             _nextShotTime = Time.time + msBetweenShots / 1000f;
             FireProjectile();
-            _projectilesRamaining--;
+            _projectilesRemaining--;
 
             SoundManager.Instance.PlaySound(AudioLibrary.Instance.ProjectileClip);
+
+            if (_projectilesRemaining == 0 && _spriteRenderer != null)
+            {
+                _spriteRenderer.sprite = emptyGunSprite; // Change gun sprite when empty
+            }
         }
     }
 
-    // Reloads this gun
+    // Reloads the gun
     public void Reload(bool autoReload)
     {
-        if (_projectilesRamaining > 0 && _projectilesRamaining <= magazineSize && !_isReloading && !autoReload)
+        if (_projectilesRemaining > 0 && _projectilesRemaining <= magazineSize && !_isReloading && !autoReload)
         {
             StartCoroutine(IEWaitForReload());
         }
 
-        if (_projectilesRamaining <= 0 && !_isReloading)
+        if (_projectilesRemaining <= 0 && !_isReloading)
         {
             StartCoroutine(IEWaitForReload());
         }
@@ -93,8 +110,19 @@ public class Gun : MonoBehaviour
     private IEnumerator IEWaitForReload()
     {
         _isReloading = true;
+
+        // Drop a magazine object
+        GameObject droppedMag = Instantiate(magazinePrefab, magazineDropPoint.position, Quaternion.identity);
+        Destroy(droppedMag, 2f); // Destroy the magazine after 2 seconds
+
         yield return new WaitForSeconds(reloadTime);
-        _projectilesRamaining = magazineSize;
+
+        _projectilesRemaining = magazineSize;
         _isReloading = false;
+
+        if (_spriteRenderer != null)
+        {
+            _spriteRenderer.sprite = normalGunSprite; // Restore gun sprite after reload
+        }
     }
 }
