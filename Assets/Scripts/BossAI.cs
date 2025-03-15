@@ -16,6 +16,10 @@ public class BossAI : MonoBehaviour
     public GameObject Bullet;
     public GameObject Gates;
 
+    public GameObject RocksPrefab;
+    public Vector2 spawnAreaMin;
+    public Vector2 spawnAreaMax;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -76,6 +80,34 @@ public class BossAI : MonoBehaviour
         animator.SetTrigger("Die");
     }
 
+    private void RockDrop()
+    {
+        int numberOfRocks = Random.Range(3, 6);
+
+        for (int i = 0; i < numberOfRocks; i++) 
+        {
+            Vector2 spawnPosition = GetRandomSpawnPosition();
+            Instantiate(RocksPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        Vector3 center = new Vector3((spawnAreaMin.x + spawnAreaMax.x) / 2, (spawnAreaMin.y + spawnAreaMax.y) / 2, 0);
+        Vector3 size = new Vector3(spawnAreaMax.x - spawnAreaMin.x, spawnAreaMax.y - spawnAreaMin.y, 1);
+
+        Gizmos.DrawWireCube(center, size);
+    }
+
+    private Vector2 GetRandomSpawnPosition()
+    {
+        float randomX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
+        float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
+        return new Vector2 (randomX, randomY);
+    }
+
     private void OnEnable()
     {
         ProjectilePooler.OnProjectileCollision += TakeDamage;
@@ -103,5 +135,10 @@ public class BossAI : MonoBehaviour
     public void AnimationEvent_Shoot()
     {
         Shoot();
+    }
+
+    public void AnimationEvent_Rocks()
+    {
+        RockDrop();
     }
 }

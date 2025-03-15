@@ -65,6 +65,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Gun\ProjectilePooler.cs" />
+    <Compile Include="Assets\Scripts\Rocks.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Collectables\CBoost.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
