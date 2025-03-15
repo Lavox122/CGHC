@@ -43,25 +43,30 @@ public class UIManager : Singleton<UIManager>
         coinTMP.text = CoinManager.Instance.TotalCoins.ToString();
     }
 
-    // Updates the player lifes
-    private void OnPlayerLifes(int currentLifes)
+    private int lastLivesCount = -1; // Store the last known lives count
+
+    public void OnPlayerLifes(int currentLifes)
     {
+        if (currentLifes == lastLivesCount) return; // Skip redundant updates
+        lastLivesCount = currentLifes;
+
+        Debug.Log("Health UI Updated: Enabling HealthBar_" + currentLifes);
+
         for (int i = 0; i < playerLifes.Length; i++)
         {
-            if (i < currentLifes) // Total is 3, so value = 2
-            {
-                playerLifes[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                playerLifes[i].gameObject.SetActive(false);
-            }
+            playerLifes[i].SetActive(i < currentLifes);
         }
     }
 
     private void OnEnable()
     {
         Health.OnLifesChanged += OnPlayerLifes;
+
+        // Ensure the health UI updates when the game starts
+        if (FindObjectOfType<Health>() != null)
+        {
+            OnPlayerLifes(FindObjectOfType<Health>().CurrentLifes);
+        }
     }
 
     private void OnDisable()
