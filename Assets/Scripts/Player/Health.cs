@@ -40,6 +40,11 @@ public class Health : MonoBehaviour
         {
             LoseLife();
         }
+
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            AddLife();
+        }
     }
 
     public void AddLife()
