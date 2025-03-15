@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Destroy this enemy if it is colliding with the player's projectile
+    [Header("Score Settings")]
+    [SerializeField] private int scoreValue = 10; // Score given when enemy is killed
+
     private void Collision(Collider2D objectCollided)
     {
         if (objectCollided.GetComponent<StateController>() != null)
         {
-            Destroy(objectCollided.gameObject);
+            // Add score when the enemy is destroyed
+            CoinManager.Instance.AddCoins(scoreValue);
+
+            Destroy(gameObject);
         }
     }
 
