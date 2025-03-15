@@ -50,8 +50,6 @@ public class UIManager : Singleton<UIManager>
         if (currentLifes == lastLivesCount) return; // Skip redundant updates
         lastLivesCount = currentLifes;
 
-        Debug.Log("Health UI Updated: Enabling HealthBar_" + currentLifes);
-
         for (int i = 0; i < playerLifes.Length; i++)
         {
             playerLifes[i].SetActive(i < currentLifes);
