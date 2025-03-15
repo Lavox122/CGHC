@@ -292,8 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: 5
-  healthFillImage: {fileID: 0}
-  healthMaterial: {fileID: 0}
 --- !u!114 &810221315211481625
 MonoBehaviour:
   m_ObjectHideFlags: 0

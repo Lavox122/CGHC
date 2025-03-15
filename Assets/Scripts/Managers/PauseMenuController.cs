@@ -1,55 +1,78 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
-    private bool isPaused = false;
+    public static bool isPaused = false; // Global pause flag
+    public GameObject pauseMenuUI; // Assign in Inspector
+    public CanvasGroup pauseMenuCanvasGroup; // Assign in Inspector
+    public GameObject player; // Assign Player GameObject in Inspector
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pauseMenuCanvasGroup != null)
         {
-            Debug.Log("Escape key pressed!");  // Debug log to check if input is detected
-            
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
+            pauseMenuCanvasGroup.alpha = 0; // Hide menu initially
+            pauseMenuCanvasGroup.interactable = false;
+            pauseMenuCanvasGroup.blocksRaycasts = false;
         }
     }
 
-    public void PauseGame()
+    void Update()
     {
-        Debug.Log("Game Paused");  // Debug log to check if PauseGame() is called
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;  // Freezes the game
+        if (Input.GetKeyDown(KeyCode.Escape)) // Press ESC to pause/unpause
+        {
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
+    }
+
+    private void PauseGame()
+    {
         isPaused = true;
+        Time.timeScale = 0.01f; // Almost stopped, but UI still responsive
+
+        if (pauseMenuCanvasGroup != null)
+        {
+            pauseMenuCanvasGroup.alpha = 1; // Show menu
+            pauseMenuCanvasGroup.interactable = true;
+            pauseMenuCanvasGroup.blocksRaycasts = true;
+        }
+
+        DisablePlayerControls();
+        Debug.Log("Game is PAUSED.");
     }
 
-    public void ResumeGame()
+    private void ResumeGame()
     {
-        Debug.Log("Game Resumed");  // Debug log to check if ResumeGame() is called
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;  // Unfreezes the game
         isPaused = false;
+        Time.timeScale = 1f; // Resume game time
+
+        if (pauseMenuCanvasGroup != null)
+        {
+            pauseMenuCanvasGroup.alpha = 0; // Hide menu
+            pauseMenuCanvasGroup.interactable = false;
+            pauseMenuCanvasGroup.blocksRaycasts = false;
+        }
+
+        EnablePlayerControls();
+        Debug.Log("Game is RESUMED.");
     }
 
-    public void RestartGame()
+    private void DisablePlayerControls()
     {
-        Debug.Log("Restarting Game...");  // Debug log for restart
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (player != null)
+        {
+            player.GetComponent<PlayerController>().enabled = false; // Disable movement
+        }
     }
 
-    public void LoadMainMenu()
+    private void EnablePlayerControls()
     {
-        Debug.Log("Loading Main Menu...");  // Debug log for main menu
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); // Make sure this scene is in Build Settings
+        if (player != null)
+        {
+            player.GetComponent<PlayerController>().enabled = true; // Re-enable movement
+        }
     }
 }
