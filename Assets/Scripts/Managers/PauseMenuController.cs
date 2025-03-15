@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -16,14 +17,7 @@ public class PauseMenuController : MonoBehaviour
             pauseMenuCanvasGroup.blocksRaycasts = false;
         }
 
-        if (player != null)
-        {
-            PlayerController controller = player.GetComponent<PlayerController>();
-            if (controller != null)
-            {
-                controller.enabled = true;
-            }
-        }
+        EnablePlayerControls();
     }
 
     void Update()
@@ -40,6 +34,7 @@ public class PauseMenuController : MonoBehaviour
     private void PauseGame()
     {
         isPaused = true;
+        pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
 
         if (pauseMenuCanvasGroup != null)
@@ -55,6 +50,7 @@ public class PauseMenuController : MonoBehaviour
     private void ResumeGame()
     {
         isPaused = false;
+        pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         Input.ResetInputAxes();
 
@@ -90,5 +86,19 @@ public class PauseMenuController : MonoBehaviour
                 controller.enabled = true;
             }
         }
+    }
+
+    // Restart the current scene
+    public void RestartGame()
+    {
+        Time.timeScale = 1f; // Ensure time resumes
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // Load the Main Menu scene
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f; // Ensure time resumes
+        SceneManager.LoadScene("MainMenu"); // Change "MainMenu" to your scene name
     }
 }
