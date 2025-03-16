@@ -94,7 +94,6 @@
     <Compile Include="Assets\Scripts\AI\Action\ActionFollowTarget.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDamage.cs" />
-    <Compile Include="Assets\boss\Skull\BossStage.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerStates.cs" />
     <Compile Include="Assets\Scripts\Player\Health.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -158,6 +157,7 @@
     <Compile Include="Assets\Scripts\Level Components\Jumper.cs" />
     <Compile Include="Assets\Scripts\Level Components\Blade.cs" />
     <Compile Include="Assets\Scripts\Boss\BossFlip.cs" />
+    <Compile Include="Assets\boss\SkullBossAI.cs" />
     <Compile Include="Assets\Scripts\Boss\Rocks.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerConditions.cs" />
