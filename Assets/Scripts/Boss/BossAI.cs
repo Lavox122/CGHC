@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossAI : MonoBehaviour
 {
     private Animator animator;
     private bool canAct = true;
     public int health = 30;
+    private int maxHealth = 30;
 
     public Transform PointA;
     public Transform PointB;
@@ -15,14 +17,24 @@ public class BossAI : MonoBehaviour
     public Transform endShoot;
     public GameObject Bullet;
     public GameObject Gates;
+    public GameObject BossHP;
 
     public GameObject RocksPrefab;
     public Vector2 spawnAreaMin;
     public Vector2 spawnAreaMax;
 
+    public Slider healthBar;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        BossHP.SetActive(true);
+
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = health;
+        }
 
         StartCoroutine(BossActionLoop());
     }
@@ -65,6 +77,11 @@ public class BossAI : MonoBehaviour
             health -= 1;
             Debug.Log("Boss Health:" + health);
 
+            if (healthBar != null)
+            {
+                healthBar.value = health;
+            }
+
             if (health <= 0)
             {
                 Die();
@@ -77,6 +94,7 @@ public class BossAI : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
 
         Gates.SetActive(false);
+        BossHP.SetActive(false);
         animator.SetTrigger("Die");
     }
 
