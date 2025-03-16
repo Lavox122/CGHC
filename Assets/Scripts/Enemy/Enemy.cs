@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     private void Collision(Collider2D objectCollided)
     {
-        if (objectCollided.GetComponent<StateController>() != null)
+        if (objectCollided.GetComponent<StateController>() != null && objectCollided.gameObject == gameObject)
         {
             // Add score when the enemy is destroyed
             CoinManager.Instance.AddCoins(scoreValue);
