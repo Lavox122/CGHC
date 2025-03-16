@@ -7,6 +7,8 @@ public class CHealth : Collectable
     protected override void Collect()
     {
         AddLife();
+
+        SoundManager.Instance.PlaySound(AudioLibrary.Instance.PotionPickupClip);
     }
 
     // Adds life

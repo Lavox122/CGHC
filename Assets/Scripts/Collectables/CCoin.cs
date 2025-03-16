@@ -9,6 +9,7 @@ public class CCoin : Collectable
 
     protected override void Collect()
     {
+        SoundManager.Instance.PlaySound(AudioLibrary.Instance.CollectableClip);
         AddCoin();
     }
 
