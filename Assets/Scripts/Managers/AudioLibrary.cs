@@ -11,6 +11,12 @@ public class AudioLibrary : Singleton<AudioLibrary>
     [SerializeField] private AudioClip playerDeadClip;
     [SerializeField] private AudioClip projectileClip;
     [SerializeField] private AudioClip projectileCollisionClip;
+    [SerializeField] private AudioClip jetpackClip;
+    [SerializeField] private AudioClip potionPickupClip;
+    [SerializeField] private AudioClip healthLoseClip;
+    [SerializeField] private AudioClip gunShootClip;
+    [SerializeField] private AudioClip enemyDeadClip;
+    [SerializeField] private AudioClip stageClearClip;
 
     // The Properties for our clips!
     public AudioClip JumpClip => jumpClip;
@@ -19,4 +25,10 @@ public class AudioLibrary : Singleton<AudioLibrary>
     public AudioClip EnemyProjectileClip => enemyProjectileClip;
     public AudioClip PlayerDeadClip => playerDeadClip;
     public AudioClip ProjectileCollisionClip => projectileCollisionClip;
+    public AudioClip JetpackClip => jetpackClip;
+    public AudioClip PotionPickupClip => potionPickupClip;
+    public AudioClip HealthLoseClip => healthLoseClip;
+    public AudioClip GunShootClip => gunShootClip;
+    public AudioClip EnemyDeadClip => enemyDeadClip;
+    public AudioClip StageClearClip => stageClearClip;
 }
