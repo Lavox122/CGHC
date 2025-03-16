@@ -12,6 +12,7 @@ public class CExtraFuel : Collectable
 
     protected override void Collect()
     {
+        SoundManager.Instance.PlaySound(AudioLibrary.Instance.PotionPickupClip);
         ApplyFuel();
     }
 
