@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private int lifes = 5; // Number of lifes the player has
-    
+
     public int MaxLifes => _maxLifes;
     public int CurrentLifes => _currentLifes;
 
@@ -54,27 +54,35 @@ public class Health : MonoBehaviour
 
     public void LoseLife()
     {
-        if (_currentLifes > 0) // Prevent negative values
+        if (_currentLifes > 0)
         {
             _currentLifes -= 1;
         }
 
-        if (_currentLifes <= 0)
+        // Update UI immediately after changing health
+        UpdateLifesUI();
+
+        // After health update, play the appropriate sound
+        if (_currentLifes > 0)
         {
+            // Player lost a life but is still alive
+            SoundManager.Instance.PlaySound(AudioLibrary.Instance.HealthLoseClip);
+        }
+        else
+        {
+            // Player has no lives left (dead)
             _currentLifes = 0;
             OnDeath?.Invoke(GetComponent<PlayerMotor>());
             SoundManager.Instance.PlaySound(AudioLibrary.Instance.PlayerDeadClip);
         }
-
-        UpdateLifesUI();
     }
 
     public void KillPlayer()
     {
         _currentLifes = 0;
-        SoundManager.Instance.PlaySound(AudioLibrary.Instance.PlayerDeadClip);
         UpdateLifesUI();
-        OnDeath?.Invoke(gameObject.GetComponent<PlayerMotor>());
+        OnDeath?.Invoke(GetComponent<PlayerMotor>());
+        SoundManager.Instance.PlaySound(AudioLibrary.Instance.PlayerDeadClip);
     }
 
     public void ResetLife()
@@ -85,7 +93,7 @@ public class Health : MonoBehaviour
 
     public void Revive()
     {
-        OnRevive?.Invoke(gameObject.GetComponent<PlayerMotor>());
+        OnRevive?.Invoke(GetComponent<PlayerMotor>());
     }
 
     private void UpdateLifesUI()
@@ -98,7 +106,7 @@ public class Health : MonoBehaviour
     {
         if (other.GetComponent<IDamageable>() != null)
         {
-            other.GetComponent<IDamageable>().Damage(gameObject.GetComponent<PlayerMotor>());
+            other.GetComponent<IDamageable>().Damage(GetComponent<PlayerMotor>());
         }
     }
 }

@@ -7,9 +7,11 @@ public class PlayerDamage : MonoBehaviour
 {
     private void Collision(Collider2D objectCollided)
     {
-        if (objectCollided.GetComponent<Health>() != null)
+        Health health = objectCollided.GetComponent<Health>();
+        if (health != null)
         {
-            objectCollided.GetComponent<Health>().LoseLife();
+            // Reduce the player's life first
+            health.LoseLife();
         }
     }
 
