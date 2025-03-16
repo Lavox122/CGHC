@@ -83,7 +83,7 @@ public class Gun : MonoBehaviour
             FireProjectile();
             _projectilesRemaining--;
 
-            SoundManager.Instance.PlaySound(AudioLibrary.Instance.ProjectileClip);
+            SoundManager.Instance.PlaySound(AudioLibrary.Instance.GunShootClip);
 
             if (_projectilesRemaining == 0 && _spriteRenderer != null)
             {
