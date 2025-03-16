@@ -5,16 +5,21 @@ public class BossController : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
+    
+    [Header("Boss Settings")]
     public float fireRate = 1.5f;
     public int maxHealth = 100;
     private int currentHealth;
     
     private int attackStage = 1;
     private int increasingBulletCount = 1;
-    
+
+    private PathFollow pathFollow;
+
     void Start()
     {
         currentHealth = maxHealth;
+        pathFollow = GetComponent<PathFollow>(); // Get PathFollow component
         StartCoroutine(AttackPattern());
     }
 

@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\AI\Core\StateController.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AITransition.cs" />
     <Compile Include="Assets\Scripts\Gun\Gun.cs" />
+    <Compile Include="Assets\boss\BossBullet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Level Components\SpecialSurface.cs" />
