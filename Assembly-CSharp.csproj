@@ -61,15 +61,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Level Components\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\SetCheckpointSpawn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Gun\ProjectilePooler.cs" />
-    <Compile Include="Assets\Scripts\Rocks.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Collectables\CBoost.cs" />
+    <Compile Include="Assets\Scripts\Level Components\SetCheckpointSpawn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Collectables\CCoin.cs" />
+    <Compile Include="Assets\Scripts\Level Components\StageCleared.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Extra\ObjectPooler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -91,7 +91,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioLibrary.cs" />
     <Compile Include="Assets\Scripts\AI\Action\ActionFollowTarget.cs" />
-    <Compile Include="Assets\Scripts\BossLocking.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDamage.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerStates.cs" />
@@ -100,17 +99,18 @@
     <Compile Include="Assets\Scripts\Gun\GunController.cs" />
     <Compile Include="Assets\Scripts\Collectables\CGun.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Level Components\Cave Teleporting.cs" />
     <Compile Include="Assets\Scripts\AI\Action\ActionShootTarget.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\AI\Decision\DecisionRadiusDetection.cs" />
     <Compile Include="Assets\Scripts\Managers\PauseMenuController.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIAction.cs" />
+    <Compile Include="Assets\Scripts\Boss\BossProjectile.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
     <Compile Include="Assets\Scripts\ParallaxBG.cs" />
-    <Compile Include="Assets\Scripts\StageCleared.cs" />
-    <Compile Include="Assets\Scripts\GunMagazine.cs" />
     <Compile Include="Assets\Scripts\Gun\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Boss\BossLocking.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\AI\Decision\DecisionLineDetection.cs" />
@@ -130,7 +130,6 @@
     <Compile Include="Assets\Scripts\AI\Action\ActionEnablePathMovement.cs" />
     <Compile Include="Assets\Scripts\AI\Action\ActionDisablePathMovement.cs" />
     <Compile Include="Assets\Scripts\Collectables\CExtraFuel.cs" />
-    <Compile Include="Assets\Scripts\Cave Teleporting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
@@ -141,6 +140,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Managers\VictoryMenuController.cs" />
     <Compile Include="Assets\Scripts\Extra\Singleton.cs" />
+    <Compile Include="Assets\Scripts\Gun\GunMagazine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Level Components\Rock.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
@@ -149,16 +149,16 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\Scripts\BossAI.cs" />
+    <Compile Include="Assets\Scripts\Boss\BossAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\BossFlip.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera2DShake.cs" />
     <Compile Include="Assets\Scripts\Level Components\Jumper.cs" />
     <Compile Include="Assets\Scripts\Level Components\Blade.cs" />
+    <Compile Include="Assets\Scripts\Boss\BossFlip.cs" />
+    <Compile Include="Assets\Scripts\Boss\Rocks.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerConditions.cs" />
-    <Compile Include="Assets\Scripts\BossProjectile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
   <ItemGroup>
