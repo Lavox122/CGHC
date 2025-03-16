@@ -8,6 +8,7 @@ public class PlayerJetpack : PlayerStates
     [Header("Settings")]
     [SerializeField] private float jetpackForce = 10f;
     [SerializeField] private float jetpackFuel = 5f;
+    [SerializeField] private float jetpackPitch = 1f;
 
     public float JetpackFuel { get; set; }
     public float FuelLeft { get; set; }
@@ -18,6 +19,9 @@ public class PlayerJetpack : PlayerStates
     private bool _stillHaveFuel = true;
 
     private int _jetpackParameter = Animator.StringToHash("Jetpack");
+
+    // Declare the AudioSource for the looping jetpack sound
+    private AudioSource _jetpackAudioSource;
 
     protected override void InitState()
     {
@@ -55,6 +59,23 @@ public class PlayerJetpack : PlayerStates
             return;
         }
 
+        // If not already jetpacking, start playing the looping jetpack sound
+        if (!_playerController.Conditions.IsJetpacking)
+        {
+            if (_jetpackAudioSource == null)
+            {
+                // Create an AudioSource component for the jetpack sound
+                _jetpackAudioSource = gameObject.AddComponent<AudioSource>();
+                _jetpackAudioSource.clip = AudioLibrary.Instance.JetpackClip;
+                _jetpackAudioSource.loop = true;
+                _jetpackAudioSource.pitch = jetpackPitch;
+            }
+            if (!_jetpackAudioSource.isPlaying)
+            {
+                _jetpackAudioSource.Play();
+            }
+        }
+
         _playerController.SetVerticalForce(jetpackForce);
         _playerController.Conditions.IsJetpacking = true;
         StartCoroutine(BurnFuel());
@@ -63,6 +84,16 @@ public class PlayerJetpack : PlayerStates
     private void EndJetpack()
     {
         _playerController.Conditions.IsJetpacking = false;
+
+        // Immediately stop and remove the looping jetpack audio if it's playing,
+        // ensuring an instant cutoff of the sound.
+        if (_jetpackAudioSource != null)
+        {
+            _jetpackAudioSource.Stop();
+            Destroy(_jetpackAudioSource);
+            _jetpackAudioSource = null;
+        }
+
         StartCoroutine(Refill());
     }
 
