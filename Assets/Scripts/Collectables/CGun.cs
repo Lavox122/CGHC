@@ -9,6 +9,7 @@ public class CGun : Collectable
 
     protected override void Collect()
     {
+        SoundManager.Instance.PlaySound(AudioLibrary.Instance.CollectableClip);
         EquippGun();
     }
 
