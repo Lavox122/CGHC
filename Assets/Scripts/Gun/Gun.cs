@@ -18,17 +18,16 @@ public class Gun : MonoBehaviour
     [SerializeField] private bool autoReload = true;
     [SerializeField] private float reloadTime = 3f;
 
-    [Header("Visuals")]
-    [SerializeField] private Sprite normalGunSprite; // Original gun sprite
-    [SerializeField] private Sprite emptyGunSprite; // Gun sprite when out of ammo
-    [SerializeField] private GameObject magazinePrefab; // Magazine object to drop
-    [SerializeField] private Transform magazineDropPoint; // Where the magazine appears
+    public GameObject MagazinePrefab;
+    public Transform dropPoint;
+
+    public GameObject ReloadingModel;
+    public GameObject Model;
 
     // Reference to GunController
     public GunController GunController { get; set; }
 
     private ObjectPooler _pooler;
-    private SpriteRenderer _spriteRenderer; // Automatically gets the gun's SpriteRenderer
     private float _nextShotTime;
     private bool _isReloading;
     private int _projectilesRemaining;
@@ -38,17 +37,7 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         _pooler = GetComponent<ObjectPooler>();
-        _spriteRenderer = GetComponent<SpriteRenderer>(); // Get the SpriteRenderer from the same object
         _projectilesRemaining = magazineSize;
-
-        if (_spriteRenderer != null)
-        {
-            _spriteRenderer.sprite = normalGunSprite; // Set initial sprite
-        }
-        else
-        {
-            Debug.LogError("Gun is missing a SpriteRenderer!", this);
-        }
     }
 
     private void Update()
@@ -56,6 +45,11 @@ public class Gun : MonoBehaviour
         if (autoReload)
         {
             Reload(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload(false);
         }
     }
 
@@ -84,11 +78,6 @@ public class Gun : MonoBehaviour
             _projectilesRemaining--;
 
             SoundManager.Instance.PlaySound(AudioLibrary.Instance.GunShootClip);
-
-            if (_projectilesRemaining == 0 && _spriteRenderer != null)
-            {
-                _spriteRenderer.sprite = emptyGunSprite; // Change gun sprite when empty
-            }
         }
     }
 
@@ -110,19 +99,17 @@ public class Gun : MonoBehaviour
     private IEnumerator IEWaitForReload()
     {
         _isReloading = true;
+        ReloadingModel.SetActive(true);
+        Model.SetActive(false);
 
-        // Drop a magazine object
-        GameObject droppedMag = Instantiate(magazinePrefab, magazineDropPoint.position, Quaternion.identity);
-        Destroy(droppedMag, 2f); // Destroy the magazine after 2 seconds
+        Instantiate(MagazinePrefab, dropPoint.position, Quaternion.identity);
 
         yield return new WaitForSeconds(reloadTime);
 
+        Model.SetActive(true);
+        ReloadingModel.SetActive(false);
+
         _projectilesRemaining = magazineSize;
         _isReloading = false;
-
-        if (_spriteRenderer != null)
-        {
-            _spriteRenderer.sprite = normalGunSprite; // Restore gun sprite after reload
-        }
     }
 }
