@@ -14,6 +14,9 @@ public class PauseMenuController : MonoBehaviour
     [Header("Reference your Player object here")]
     public GameObject player;
 
+    [Header("Level Manager for respawning")]
+    public LevelManager levelManager;
+
     // Awake is called before Start. This ensures the player is enabled as early as possible.
     private void Awake()
     {
@@ -144,8 +147,8 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1f;
         EnablePlayerControls();
 
-        // Reload the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Respawns
+        levelManager.RevivePlayer();
     }
 
     // Load the Main Menu scene
