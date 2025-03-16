@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
     <Compile Include="Assets\Scripts\ParallaxBG.cs" />
+    <Compile Include="Assets\Scripts\StageCleared.cs" />
     <Compile Include="Assets\Scripts\GunMagazine.cs" />
     <Compile Include="Assets\Scripts\Gun\Projectile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJetpack.cs" />
     <Compile Include="Assets\Scripts\Level Components\IDamageable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Managers\VictoryMenuController.cs" />
     <Compile Include="Assets\Scripts\Extra\Singleton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Level Components\Rock.cs" />
