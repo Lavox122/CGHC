@@ -172,7 +172,6 @@ MonoBehaviour:
   magazineSize: 30
   autoReload: 1
   reloadTime: 3
-  gunSpriteRenderer: {fileID: 6043268447976983261}
   normalGunSprite: {fileID: 747567764, guid: 5d6ea8ca22fd4b542a469c5d763413ff, type: 3}
   emptyGunSprite: {fileID: 21300000, guid: 5bdaa5fcb52cec64ca4fa5b1cd91f38f, type: 3}
   magazinePrefab: {fileID: 8196548498277929457, guid: ec7818e9ab3f86f46ae02094cca09098, type: 3}
