@@ -24,14 +24,6 @@ public class LevelManager : MonoBehaviour
         OnPlayerSpawn?.Invoke(_currentPlayer);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RevivePlayer();
-        }
-    }
-
     // Spawns our player in the spawnPoint   
     private void SpawnPlayer(GameObject player)
     {
@@ -46,7 +38,7 @@ public class LevelManager : MonoBehaviour
     }
 
     // Revives our player
-    private void RevivePlayer()
+    public void RevivePlayer()
     {
         if (_currentPlayer != null)
         {
