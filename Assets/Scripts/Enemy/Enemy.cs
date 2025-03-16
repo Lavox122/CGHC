@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
             // Add score when the enemy is destroyed
             CoinManager.Instance.AddCoins(scoreValue);
 
+            // Play the enemy dead sound sound effect
+            SoundManager.Instance.PlaySound(AudioLibrary.Instance.EnemyDeathClip);
+
             Destroy(gameObject);
         }
     }
@@ -28,3 +31,4 @@ public class Enemy : MonoBehaviour
         ProjectilePooler.OnProjectileCollision -= Collision;
     }
 }
+

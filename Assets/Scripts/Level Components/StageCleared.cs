@@ -10,7 +10,10 @@ public class StageCleared : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player reached the end checkpoint!");
-            
+
+            // Play the stage clear sound
+            SoundManager.Instance.PlaySound(AudioLibrary.Instance.StageClearClip);
+
             // Trigger the Victory Menu
             if (victoryMenu != null)
             {
