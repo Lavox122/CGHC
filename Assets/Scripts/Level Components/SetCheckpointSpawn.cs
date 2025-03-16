@@ -10,6 +10,7 @@ public class SetCheckpointSpawn : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SoundManager.Instance.PlaySound(AudioLibrary.Instance.CheckPointClip);
             spawnPoint.transform.position = transform.position;
             Debug.Log("changed");
         }

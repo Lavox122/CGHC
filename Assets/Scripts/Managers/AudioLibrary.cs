@@ -17,6 +17,7 @@ public class AudioLibrary : Singleton<AudioLibrary>
     [SerializeField] private AudioClip gunShootClip;
     [SerializeField] private AudioClip enemyDeathClip;
     [SerializeField] private AudioClip stageClearClip;
+    [SerializeField] private AudioClip checkPointClip;
 
     // The Properties for our clips!
     public AudioClip JumpClip => jumpClip;
@@ -31,4 +32,5 @@ public class AudioLibrary : Singleton<AudioLibrary>
     public AudioClip GunShootClip => gunShootClip;
     public AudioClip EnemyDeathClip => enemyDeathClip;
     public AudioClip StageClearClip => stageClearClip;
+    public AudioClip CheckPointClip => checkPointClip;
 }
