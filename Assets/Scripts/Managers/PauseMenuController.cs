@@ -149,6 +149,7 @@ public class PauseMenuController : MonoBehaviour
 
         // Respawns
         levelManager.RevivePlayer();
+        pauseMenuPanel.SetActive(false);
     }
 
     // Load the Main Menu scene
