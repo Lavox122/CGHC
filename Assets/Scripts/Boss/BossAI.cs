@@ -6,8 +6,8 @@ public class BossAI : MonoBehaviour
 {
     private Animator animator;
     private bool canAct = true;
-    public int health = 60;
-    private int maxHealth = 60;
+    public int health = 100;
+    private int maxHealth = 100;
 
     public Transform PointA;
     public Transform PointB;
