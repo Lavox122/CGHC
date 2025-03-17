@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c80019e1d331e4ebab95a11b982298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallFactor: 0.8
+  fallFactor: 1
 --- !u!114 &2401484983423528514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jetpackForce: 10
   jetpackFuel: 5
-  jetpackPitch: 1
+  jetpackPitch: 0.2
 --- !u!95 &988753272519134150
 Animator:
   serializedVersion: 5

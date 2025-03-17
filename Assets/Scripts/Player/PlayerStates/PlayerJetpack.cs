@@ -111,7 +111,7 @@ public class PlayerJetpack : PlayerStates
 
     private IEnumerator Refill()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         float fuel = FuelLeft;
         while (fuel < JetpackFuel && !_playerController.Conditions.IsJetpacking)
         {
