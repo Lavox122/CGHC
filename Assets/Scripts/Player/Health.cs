@@ -30,12 +30,13 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            LoseLife();
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    LoseLife();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.K))
+        // Dev stuff will add cheat key to activate
+        if (Input.GetKeyDown(KeyCode.G))
         {
             AddLife();
         }
