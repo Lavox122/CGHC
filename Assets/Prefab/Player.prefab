@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jetpackForce: 10
-  jetpackFuel: 5
+  jetpackFuel: 1
   jetpackPitch: 0.2
 --- !u!95 &988753272519134150
 Animator:
