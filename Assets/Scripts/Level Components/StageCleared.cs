@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class StageCleared : MonoBehaviour
 {
-    public VictoryMenuController victoryMenu; // Assign VictoryMenuController in Inspector
+    public VictoryMenuController victoryMenu; // Used for normal levels
+    public LastVictoryController lastVictoryMenu; // Used for the last level
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,10 +15,14 @@ public class StageCleared : MonoBehaviour
             // Play the stage clear sound
             SoundManager.Instance.PlaySound(AudioLibrary.Instance.StageClearClip);
 
-            // Trigger the Victory Menu
-            if (victoryMenu != null)
+            // Trigger the appropriate victory menu
+            if (lastVictoryMenu != null) 
             {
-                victoryMenu.ShowVictoryMenu();
+                lastVictoryMenu.ShowVictoryMenu(); // Last level
+            }
+            else if (victoryMenu != null) 
+            {
+                victoryMenu.ShowVictoryMenu(); // Other levels
             }
         }
     }

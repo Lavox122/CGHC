@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-
 public class LastVictoryController : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject victoryMenuPanel;
     public TextMeshProUGUI finalScoreText;
-    public string mainMenuScene = "Main Menu"; // Ensure this matches your main menu scene name
+    public string mainMenuScene = "Main Menu";
 
     private void Start()
     {
@@ -22,6 +21,12 @@ public class LastVictoryController : MonoBehaviour
         {
             victoryMenuPanel.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // When any object enters, trigger the victory menu (no need for specific tags)
+        ShowVictoryMenu();
     }
 
     public void ShowVictoryMenu()
