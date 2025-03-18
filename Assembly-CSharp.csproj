@@ -59,6 +59,7 @@
     <UnityVersion>2022.3.35f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\Lenovo\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.35f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.35f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
     <Compile Include="Assets\Scripts\ParallaxBG.cs" />
+    <Compile Include="Assets\Scripts\Managers\LastLevelVictoryScene.cs" />
     <Compile Include="Assets\Scripts\Gun\Projectile.cs" />
     <Compile Include="Assets\Scripts\Boss\BossLocking.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
