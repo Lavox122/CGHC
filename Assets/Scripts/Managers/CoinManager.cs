@@ -12,28 +12,23 @@ public class CoinManager : Singleton<CoinManager>
 
     private void Start()
     {
-        LoadCoins();
+        // Reset coins at the start of the game
+        ResetCoins();
     }
 
-    //private void Update()       //This is for SIMULATION purposes, we can delete the UPDATE method later
-    //{
-    //    if (Input.GetKeyDown(KeyCode.P))
-    //    {
-    //        AddCoins(10);
-    //    }
-    //}
-
-    // Load the coins saved
-    private void LoadCoins()
+    // Resets the coins to 0 and updates PlayerPrefs
+    public void ResetCoins()
     {
-        TotalCoins = PlayerPrefs.GetInt(COINS_KEY, 0);
+        TotalCoins = 0;
+        PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
+        PlayerPrefs.Save();
+        Debug.Log("Coin count reset to 0.");
     }
 
-    // Adds coins to our Global
+    // Adds coins to our total
     public void AddCoins(int amount)
     {
         TotalCoins += amount;
-
         PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
         PlayerPrefs.Save();
     }
@@ -42,7 +37,6 @@ public class CoinManager : Singleton<CoinManager>
     public void RemoveCoins(int amount)
     {
         TotalCoins -= amount;
-
         PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
         PlayerPrefs.Save();
     }
