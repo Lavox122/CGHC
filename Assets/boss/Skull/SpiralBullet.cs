@@ -13,8 +13,14 @@ public class SpiralBullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject); // Instantly destroy the player
-            Destroy(gameObject); // Destroy the bullet
+            Health playerHealth = other.GetComponent<Health>();
+
+            if (playerHealth != null)
+            {
+                playerHealth.LoseLife(); // Reduce player's life instead of destroying the object
+            }
+
+            Destroy(gameObject); // Destroy the bullet after hitting the player
         }
     }
 }
