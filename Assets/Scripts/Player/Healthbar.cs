@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Healthbar : MonoBehaviour
 {
-    [SerializeField] private Animator healthAnimator; // Assign the Animator in Inspector
+    [SerializeField] private Animator healthAnimator;
 
     private void OnEnable()
     {
