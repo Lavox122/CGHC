@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Level Components\MovingPlatform.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\boss\Skull\BossSpiralShoot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Gun\ProjectilePooler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMovement.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
     <Compile Include="Assets\Scripts\ParallaxBG.cs" />
-    <Compile Include="Assets\Scripts\Managers\LastLevelVictoryScene.cs" />
     <Compile Include="Assets\Scripts\Gun\Projectile.cs" />
     <Compile Include="Assets\Scripts\Boss\BossLocking.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -145,6 +145,7 @@
     <Compile Include="Assets\Scripts\Gun\GunMagazine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Level Components\Rock.cs" />
+    <Compile Include="Assets\boss\Skull\SpiralBullet.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Player\Healthbar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
