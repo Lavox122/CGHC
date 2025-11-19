@@ -95,6 +95,9 @@ public class Gun : MonoBehaviour
         }
     }
 
+
+    //Gun gun gun
+
     // Reload coroutine
     private IEnumerator IEWaitForReload()
     {
