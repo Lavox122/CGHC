@@ -110,7 +110,6 @@
     <Compile Include="Assets\Scripts\AI\Core\AIAction.cs" />
     <Compile Include="Assets\Scripts\Boss\BossProjectile.cs" />
     <Compile Include="Assets\RestaurantPixelArt\Scripts\Door.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerMovement1 N.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump.cs" />
     <Compile Include="Assets\Scripts\AI\Core\AIDecision.cs" />
     <Compile Include="Assets\Scripts\ParallaxBG.cs" />
@@ -129,7 +128,6 @@
     <Compile Include="Assets\Scripts\AI\Core\AITransition.cs" />
     <Compile Include="Assets\Scripts\Gun\Gun.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy1 N.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\RestaurantPixelArt\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Level Components\SpecialSurface.cs" />
@@ -160,7 +158,6 @@
     <Compile Include="Assets\Scripts\Boss\BossAI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Managers\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerStates\PlayerJump1 N.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera2DShake.cs" />
     <Compile Include="Assets\Scripts\Level Components\Jumper.cs" />
     <Compile Include="Assets\Scripts\Level Components\Blade.cs" />
